@@ -15,7 +15,7 @@ module Ingreedy
     parser = Parser.new(query)
     parser.parse
   rescue Parslet::ParseFailed => e
-    fail ParseFailed.new(e.message), e.backtrace
+    raise ParseFailed.new(e.message)
   end
 
   def self.dictionaries
